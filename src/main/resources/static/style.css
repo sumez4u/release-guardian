@@ -1,0 +1,381 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #17202a;
+}
+
+.topbar {
+    background: #111827;
+    color: white;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.topbar p {
+    margin: 6px 0 0;
+    color: #cbd5e1;
+}
+
+.status-badge {
+    background: #1f2937;
+    border: 1px solid #374151;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.panel {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.panel-header {
+    margin-bottom: 20px;
+}
+
+.panel-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.panel-header p {
+    margin: 6px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #475569;
+}
+
+.form-group input,
+.form-group select {
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+.loading {
+    margin-top: 14px;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.decision-banner {
+    background: white;
+    border: 2px solid #2563eb;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.decision-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #64748b;
+    letter-spacing: 1px;
+}
+
+.decision-banner h2 {
+    margin: 8px 0;
+    font-size: 30px;
+}
+
+.decision-banner p {
+    margin: 0;
+    color: #475569;
+}
+
+.confidence {
+    padding: 10px 16px;
+    border-radius: 20px;
+    background: #e2e8f0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.metric-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.metric-label {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.metric-card strong {
+    font-size: 25px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.risk-score {
+    text-align: center;
+    padding: 15px;
+}
+
+.risk-score span {
+    display: block;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.risk-score small {
+    color: #64748b;
+}
+
+.description {
+    color: #475569;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.evidence-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.evidence-item {
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+    padding: 14px 16px;
+    border-radius: 6px;
+}
+
+.evidence-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.evidence-item span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.test-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.test-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fafafa;
+}
+
+.test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.test-id {
+    font-weight: bold;
+    color: #1d4ed8;
+}
+
+.priority {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 12px;
+    background: #e2e8f0;
+}
+
+.test-name {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.test-reason {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.decision-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.decision-details h3 {
+    font-size: 15px;
+    margin-top: 0;
+}
+
+.decision-details ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.decision-details li {
+    margin-bottom: 8px;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.empty-state {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .topbar {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .form-grid,
+    .dashboard-grid,
+    .decision-details {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .decision-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Release Guardian</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div>
+        <h1>Release Guardian</h1>
+        <p>AI-powered release risk & decision intelligence</p>
+    </div>
+
+    <div class="status-badge">
+        ● SYSTEM READY
+    </div>
+</header>
+
+
+<main class="container">
+
+    <!-- Release Analysis Input -->
+    <section class="panel">
+
+        <div class="panel-header">
+            <div>
+                <h2>Release Analysis</h2>
+                <p>Analyze a release before deployment.</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label for="applicationName">Application</label>
+                <input
+                        id="applicationName"
+                        type="text"
+                        value="payments-api"
+                        placeholder="payments-api">
+            </div>
+
+            <div class="form-group">
+                <label for="version">Version</label>
+                <input
+                        id="version"
+                        type="text"
+                        value="2.8.0"
+                        placeholder="2.8.0">
+            </div>
+
+            <div class="form-group">
+                <label for="commitId">Commit ID</label>
+                <input
+                        id="commitId"
+                        type="text"
+                        value="a81f92c"
+                        placeholder="commit-id">
+            </div>
+
+            <div class="form-group">
+                <label for="scenario">Demo Scenario</label>
+
+                <select id="scenario">
+                    <option value="DEFECT">DEFECT — Blocking failure</option>
+                    <option value="CLEAN">CLEAN — Safe release</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button id="analyzeButton" onclick="analyzeRelease()">
+            Analyze Release
+        </button>
+
+        <div id="loading" class="loading hidden">
+            Analyzing release evidence...
+        </div>
+
+    </section>
+
+
+    <!-- Decision Banner -->
+    <section id="decisionBanner" class="decision-banner hidden">
+
+        <div>
+            <span class="decision-label">RELEASE DECISION</span>
+            <h2 id="decisionText">—</h2>
+            <p id="decisionReason">—</p>
+        </div>
+
+        <div id="confidenceBadge" class="confidence">
+            —
+        </div>
+
+    </section>
+
+
+    <!-- Key Metrics -->
+    <section class="metrics-grid">
+
+        <div class="metric-card">
+            <span class="metric-label">Risk Level</span>
+            <strong id="riskLevel">—</strong>
+        </div>
+
+        <div class="metric-card">
+            <span class="metric-label">Changed Files</span>
+            <strong id="changedFiles">—</strong>
+        </div>
+
+        <div class="metric-card">
+            <span class="metric-label">Impacted Components</span>
+            <strong id="impactedComponents">—</strong>
+        </div>
+
+        <div class="metric-card">
+            <span class="metric-label">Tests Executed</span>
+            <strong id="totalTests">—</strong>
+        </div>
+
+        <div class="metric-card">
+            <span class="metric-label">Passed</span>
+            <strong id="passedTests">—</strong>
+        </div>
+
+        <div class="metric-card">
+            <span class="metric-label">Failed</span>
+            <strong id="failedTests">—</strong>
+        </div>
+
+    </section>
+
+
+    <!-- Main Dashboard Grid -->
+    <section class="dashboard-grid">
+
+        <!-- Impact -->
+        <div class="panel">
+
+            <div class="panel-header">
+                <h2>Impacted Components</h2>
+            </div>
+
+            <div id="components" class="tag-container">
+                <span class="empty-state">Run an analysis.</span>
+            </div>
+
+        </div>
+
+
+        <!-- Risk Assessment -->
+        <div class="panel">
+
+            <div class="panel-header">
+                <h2>Risk Assessment</h2>
+            </div>
+
+            <div class="risk-score">
+                <span id="riskScore">—</span>
+                <small>Risk Score</small>
+            </div>
+
+            <p id="riskReason" class="description">
+                Run an analysis to calculate baseline risk.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Evidence -->
+    <section class="panel">
+
+        <div class="panel-header">
+            <div>
+                <h2>Evidence</h2>
+                <p>Signals used to determine the release decision.</p>
+            </div>
+        </div>
+
+        <div id="evidenceList" class="evidence-list">
+            <span class="empty-state">No evidence available.</span>
+        </div>
+
+    </section>
+
+
+    <!-- Selected Tests -->
+    <section class="panel">
+
+        <div class="panel-header">
+            <div>
+                <h2>Intelligent Test Selection</h2>
+                <p>Tests selected based on impacted components and priority.</p>
+            </div>
+        </div>
+
+        <div id="testList" class="test-list">
+            <span class="empty-state">No tests selected.</span>
+        </div>
+
+    </section>
+
+
+    <!-- Why Decision -->
+    <section class="panel">
+
+        <div class="panel-header">
+            <div>
+                <h2>Why This Decision?</h2>
+                <p>Explainable release intelligence.</p>
+            </div>
+        </div>
+
+        <div class="decision-details">
+
+            <div>
+                <h3>Blocking Reasons</h3>
+                <ul id="blockingReasons">
+                    <li>No analysis performed.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Supporting Evidence</h3>
+                <ul id="supportingEvidence">
+                    <li>No analysis performed.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Next Actions</h3>
+                <ul id="nextActions">
+                    <li>No analysis performed.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>Release Guardian • Agentic Release Intelligence</p>
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
